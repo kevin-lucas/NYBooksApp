@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.kevinlucas.android.nybooks.R
+import br.com.kevinlucas.android.nybooks.presentation.details.BookDetailsActivity
 
 class BooksActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +29,14 @@ class BooksActivity : AppCompatActivity() {
                     layoutManager =
                         LinearLayoutManager(this@BooksActivity, RecyclerView.VERTICAL, false)
                     setHasFixedSize(true)
-                    adapter = BooksAdapter(books)
+                    adapter = BooksAdapter(books) { book ->
+                        val intent = BookDetailsActivity.getStartIntent(
+                            this@BooksActivity,
+                            book.title,
+                            book.description
+                        )
+                        this@BooksActivity.startActivity(intent)
+                    }
                 }
             }
         })
