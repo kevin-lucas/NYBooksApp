@@ -10,5 +10,5 @@ interface NYTServices {
     fun getBooks(
         @Query("api-key") apiKey: String = "17e1M0SBPhVdgwskXzvmSuAGmPdZmZEA",
         @Query("list") list: String = "hardcover-fiction"
-    ): Call<List<BookBodyResponse>>
+    ): Call<BookBodyResponse>
 }

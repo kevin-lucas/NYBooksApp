@@ -33,8 +33,8 @@ android {
 }
 
 ext {
-    reclyclerViewVersion="1.2.1"
-    reclyclerViewSelectionVersion="1.1.0"
+    reclyclerViewVersion = "1.2.1"
+    reclyclerViewSelectionVersion = "1.1.0"
 
     retrofit_version = "2.6.0"
 }
