@@ -1,13 +1,18 @@
 <resources>
     <string name="app_name">NyBooks</string>
     <!-- Global -->
+    <string name="books_error_401">Não autorizado</string>
+    <string name="books_error_400_generic">Erro não tratado</string>
+    <string name="books_error_500_generic">Erro catastrófico</string>
 
     <!-- Books Activity -->
     <string name="books_titles">Books</string>
-
 
     <!-- Books Details Activity -->]
     <string name="books_details_title">Books Details</string>
     <string name="books_details_title_label">Title</string>
     <string name="books_details_description_label">Description</string>
+
+    <!-- -->
+
 </resources>

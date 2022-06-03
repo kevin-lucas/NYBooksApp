@@ -2,6 +2,8 @@ package br.com.kevinlucas.android.nybooks.presentation.books
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
+import android.widget.ViewFlipper
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -37,6 +39,21 @@ class BooksActivity : BaseActivity() {
                         )
                         this@BooksActivity.startActivity(intent)
                     }
+                }
+            }
+        })
+
+        viewModel.viewFlipperLiveData.observe(this@BooksActivity, Observer {
+            it.let { viewFlipper ->
+
+                // mostra o primeiro layout
+                val viewFlipperBooks = findViewById<ViewFlipper>(R.id.viewFlipperBooks)
+                viewFlipperBooks.displayedChild = viewFlipper.first
+
+                // se for error
+                viewFlipper.second?.let { errorMessageResId ->
+                    val tvErrorBooks = findViewById<TextView>(R.id.tvError)
+                    tvErrorBooks.text = getString(errorMessageResId)
                 }
             }
         })
