@@ -5,7 +5,9 @@
     <!-- Books Activity -->
     <string name="books_titles">Books</string>
 
-    <!-- Books Details Activity -->
+
+    <!-- Books Details Activity -->]
+    <string name="books_details_title">Books Details</string>
     <string name="books_details_title_label">Title</string>
     <string name="books_details_description_label">Description</string>
 </resources>

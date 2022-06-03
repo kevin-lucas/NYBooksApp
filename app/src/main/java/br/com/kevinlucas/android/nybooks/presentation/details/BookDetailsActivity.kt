@@ -2,15 +2,20 @@ package br.com.kevinlucas.android.nybooks.presentation.details
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.appcompat.widget.Toolbar
 import br.com.kevinlucas.android.nybooks.R
+import br.com.kevinlucas.android.nybooks.presentation.base.BaseActivity
 
-class BookDetailsActivity : AppCompatActivity() {
+class BookDetailsActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book_details)
+
+        val toolbarMain = findViewById<Toolbar>(R.id.toolbarMain)
+
+        setupToolbar(toolbarMain, R.string.books_details_title)
 
         val title = intent.getStringExtra(EXTRA_TITLE)
         val description = intent.getStringExtra(EXTRA_DESCRIPTION)
