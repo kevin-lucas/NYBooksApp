@@ -15,9 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NyBooks"
         tools:targetApi="31">
-        <activity
-            android:name=".presentation.details.BookDetailsActivity"
-            android:exported="false" />
+
         <activity
             android:name=".presentation.books.BooksActivity"
             android:exported="true">
@@ -27,6 +25,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".presentation.details.BookDetailsActivity"
+            android:exported="false"
+            android:parentActivityName=".presentation.books.BooksActivity" />
     </application>
 
 </manifest>
