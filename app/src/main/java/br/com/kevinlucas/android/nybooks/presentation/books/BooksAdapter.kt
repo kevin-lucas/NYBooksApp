@@ -3,10 +3,10 @@ package br.com.kevinlucas.android.nybooks.presentation.books
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.kevinlucas.android.nybooks.R
 import br.com.kevinlucas.android.nybooks.data.model.Book
-import kotlinx.android.synthetic.main.item_book.view.*
 
 class BooksAdapter(val books : List<Book>) : RecyclerView.Adapter<BooksAdapter.BooksViewHolder>() {
 
@@ -22,8 +22,8 @@ class BooksAdapter(val books : List<Book>) : RecyclerView.Adapter<BooksAdapter.B
     override fun getItemCount() = books.count()
 
     class BooksViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val title = itemView.textTitle
-        private val author = itemView.textAuthor
+        private val title = itemView.findViewById<TextView>(R.id.textTitle)
+        private val author = itemView.findViewById<TextView>(R.id.textAuthor)
 
         fun bindView(book : Book){
             title.text = book.title
